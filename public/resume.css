@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #111;
+  position: relative;
+}
+.current_page {
+  background-color: #ffb400;
+  color: #111;
+}
+.header {
+  text-align: center;
+  margin-top: 70px;
+  color: rgb(255 255 255 / 7%);
+  font-weight: 700;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  animation: title 1s;
+  animation: detail 0.7s;
+}
+.heading {
+  font-size: 110px;
+  letter-spacing: 4px;
+}
+.aboutheding {
+  font-size: 56px;
+  font-weight: 900;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.heading_span {
+  color: #ffb400;
+}
+
+.navigation__checkbox {
+  display: none;
+}
+
+.navigation__button {
+  background-color: #fff;
+  height: 4rem;
+  width: 4rem;
+  position: fixed;
+  top: 3.5rem;
+  right: 3.5rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+.navigation {
+  animation: navigation 1s;
+}
+.navigation__background {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 3.5rem;
+  right: 3.5rem;
+  background-color: #1c1c1c;
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  display: none;
+  width: 0;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+}
+
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.navigation__item {
+  margin: 1rem;
+}
+
+.navigation__link:link,
+.navigation__link:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    #ffb400 50%
+  );
+  background-size: 240%;
+  transition: all 0.4s;
+}
+.navigation__link:link span,
+.navigation__link:visited span {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.navigation__link:hover,
+.navigation__link:active {
+  background-position: 100%;
+  color: #111;
+  transform: translateX(1rem);
+}
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  display: flex;
+  width: 100%;
+  animation: navigation 7s;
+}
+
+.navigation__icon {
+  position: relative;
+  margin-top: 2rem;
+}
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+  width: 2rem;
+  height: 2px;
+  background-color: #333;
+  display: inline-block;
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation__icon::before {
+  top: -0.5rem;
+}
+.navigation__icon::after {
+  top: 0.5rem;
+}
+
+.navigation__button:hover .navigation__icon::before {
+  top: -0.6rem;
+}
+
+.navigation__button:hover .navigation__icon::after {
+  top: 0.6rem;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.resumepdf {
+  width: 70%;
+  height: 500px;
+}
+.resume {
+  text-align: center;
+  margin-top: 50px;
+  animation: resume 0.7s;
+}
+.btn_downlode {
+  padding: 20px;
+  border: 2px solid #ffb400;
+  border-radius: 20px;
+  background-color: transparent;
+  width: 20%;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 14px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.btn_downlode:hover {
+  background-color: #ffb400;
+  color: black;
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+.downlodecv {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+@keyframes detail {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes resume {
+  0% {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes navigation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 576px) {
+  .header {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .heading {
+    font-size: 70px;
+    letter-spacing: 3px;
+  }
+  .aboutheding {
+    font-size: 36px;
+  }
+  .resumepdf {
+    width: 70%;
+    height: 300px;
+  }
+  .btn_downlode {
+    padding: 10px;
+    border: 2px solid #ffb400;
+    border-radius: 50px;
+    background-color: transparent;
+    width: 50%;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    font-size: 10px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+  }
+  .btn_downlode:hover {
+    background-color: #ffb400;
+    color: black;
+    cursor: pointer;
+  }
+  .downlodecv {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .header {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .heading {
+    font-size: 80px;
+    letter-spacing: 3px;
+  }
+  .aboutheding {
+    font-size: 30px;
+  }
+  .navigation__background {
+    top: 2rem;
+    right: 2rem;
+  }
+  .navigation__button {
+    top: 2rem;
+    right: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .header {
+    text-align: center;
+    margin-top: 60px;
+  }
+  .heading {
+    font-size: 50px;
+    letter-spacing: 3px;
+  }
+  .aboutheding {
+    font-size: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .heading {
+    display: none;
+  }
+  .aboutheding {
+    margin-top: -90px;
+    font-size: 40px;
+  }
+  .container {
+    margin-top: 200px;
+  }
+  .navigation__button {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  .navigation__background {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  body {
+    height: 300px;
+  }
+  .navigation__icon,
+  .navigation__icon::before,
+  .navigation__icon::after {
+    width: 1.7rem;
+  }
+  .navigation__icon {
+    position: relative;
+    margin-top: 1.5rem;
+  }
+}

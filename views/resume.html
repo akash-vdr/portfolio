@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <link rel="stylesheet" href="../public/resume.css" />
+    <link rel="stylesheet" href="../icons.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+
+        <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="../index.html" class="navigation__link"
+                ><span><i class="icon-basic-home"></i></span>HOME</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="../views/about.html" class="navigation__link"
+                ><span
+                  ><i class="icon-basic-todolist-pen nav_icons_other"></i></span
+                >ABOUT</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="../views/projects.html" class="navigation__link"
+                ><span
+                  ><i class="icon-basic-pencil-ruler nav_icons_other"></i></span
+                >PROJECT</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="../views/resume.html" class="navigation__link "
+                ><span>
+                  <i class="icon-basic-sheet-txt nav_icons_other"></i></span
+                >RESUME</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="../views/contact.html" class="navigation__link"
+                ><span
+                  ><i
+                    class="icon-basic-mail-open-text nav_icons_other"
+                  ></i></span
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header">
+        <h1 class="heading">PREVIEW</h1>
+        <h2 class="aboutheding">RESU<span class="heading_span">ME</span></h2>
+      </div>
+      <div class="resume">
+        <embed
+          src="../images&video/Sanjay_S_Resume.pdf"
+          type="application/pdf"
+          class="resumepdf"
+        />
+      </div>
+      <div class="downlodecv">
+        <a href="../images&video/Sanjay_S_Resume.pdf" download="sanjay_resume">
+          <button class="btn_downlode">download cv</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
